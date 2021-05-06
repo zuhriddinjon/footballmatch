@@ -65,7 +65,6 @@ public class MatchMovieFragment extends Fragment {
         controller.setMediaPlayer(videoView);
         videoView.setMediaController(controller);
         controller.setAnchorView(videoView);
-//        initializePlayer();
         return view;
     }
 
@@ -73,13 +72,6 @@ public class MatchMovieFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        if (savedInstanceState != null) {
-//            mCurrentPosition = savedInstanceState.getInt(PLAYBACK_TIME);
-//        }
-//        MediaController controller = new MediaController(requireContext());
-//        controller.setMediaPlayer(videoView);
-//        videoView.setMediaController(controller);
-//        initializePlayer();
     }
 
     @Override
