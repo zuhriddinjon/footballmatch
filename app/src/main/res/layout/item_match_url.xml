@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_video_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_name" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_video_quality_240"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="240"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/btn_video_quality_400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_video_quality_400"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="400"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/btn_video_quality_720"
+            app:layout_constraintStart_toEndOf="@id/btn_video_quality_240"
+            app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_video_quality_720"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="720"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/btn_video_quality_1000"
+            app:layout_constraintStart_toEndOf="@id/btn_video_quality_400"
+            app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_video_quality_1000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="1000"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_video_quality_720"
+            app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
