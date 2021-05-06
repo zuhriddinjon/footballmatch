@@ -1,7 +1,6 @@
 package uz.instat.footballmatch.ui.match;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,8 +67,9 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        presenter.start();
+        if (savedInstanceState == null) {
+            presenter.start();
+        }
     }
 
     @Override
@@ -87,7 +87,6 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
 
     @Override
     public void showErrorUrl(String message) {
-        Log.d("TAG", "showErrorUrl: " + message);
         pbInfo.setVisibility(View.GONE);
     }
 
@@ -102,7 +101,6 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
 
     @Override
     public void loadMatchUrlList(ArrayList<MatchUrlRes> urlResList) {
-        Log.d("TAG", "loadMatchUrlList: ");
         models = getModelList(urlResList);
         adapter = new MatchAdapter(models, this);
         recyclerView.setAdapter(adapter);
@@ -147,7 +145,7 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
         MatchMovieFragment fragment = MatchMovieFragment.newInstance(url);
         requireActivity().getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
+                .add(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit();
     }
