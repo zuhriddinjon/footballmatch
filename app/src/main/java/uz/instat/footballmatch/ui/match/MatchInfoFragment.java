@@ -45,6 +45,7 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        presenter = new MatchPresenter(this);
 
         infoReq = new MatchInfoReq("get_match_info", new Params(1L, 1724836L));
         urlReq = new MatchUrlReq(1724836L, 1L);
@@ -68,7 +69,6 @@ public class MatchInfoFragment extends Fragment implements MatchContract.View, M
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        presenter = new MatchPresenter(this);
         presenter.start();
     }
 
